@@ -1,0 +1,21 @@
+.image {
+    width: 300px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.circle {
+    transform: translateX(100px);
+    transition-duration: 1s;
+    transform-origin: top lihgt;
+    transform: rotate(180deg);
+
+}
+
+
+
+/* .image:hover {
+    transform: rotate(180deg); */
+    
+    
+
