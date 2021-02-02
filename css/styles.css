@@ -4,18 +4,26 @@
     cursor: pointer;
     user-select: none;
 }
+.circle1 {
+    transform: scale(-1,1);
+    transition-duration: 1s;
+    user-select: none;
+} 
 
-.circle {
+.circle2 {
+    
+    transform: scale(1,-1);
+    transition-duration: 2s;
+    user-select: none;
+} 
+
+.circle3 {
     transform: translateX(100px);
     transition-duration: 1s;
     transform-origin: top lihgt;
     transform: rotate(180deg);
     user-select: none;
-
 }
-
-
-
 /* .image:hover {
     transform: rotate(180deg); */
     
