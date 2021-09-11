@@ -387,6 +387,25 @@ const n = 15;
 // - 1 つの文字列として出力してください。
 // - 数値は 2 桁で表示してください。
 // - 数値のあとの () のなかに、第何周目かを W1 から W5 で表現し、そのあとに曜日を表す 3 文字も表示します。
+{
+const n = 31;
+const dayOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+let output = '';
+
+for (let i = 1; i <= n; i++) {
+  let d = i.toString().padStart(2, '0');
+  let weekNo = Math.floor((i-1)/7) + 1;
+  let dayStr = `${d} (W${weekNo}${dayOfWeek[(i-1)%7]})`;
+  output += dayStr + ' ';
+
+  if (i % 7 === 0) {
+    output += '\n';
+  }
+}
+
+console.log(output);
+}
 
 
 
@@ -395,19 +414,16 @@ const n = 15;
 
 // const c = 1666.66 % 10000 カウントした数を出そうとする
 // const c = 16.94 % 10000 
-// const c = なにかの計算で16.66 % がでる
 
 // 色々な数が出てわからなくなる
-
-
 // const c = 16.94
 // const n = [1,2,3,4,5,6];
 // // console.logにて実際のサイコロができる
 // const a = Math.floor(Math.random() * n.length +1);
 // console.log(a);
 
-// 「おみくじ」動画＃確率を操作してみよう　にて
-//  n が 0.05 より小さくはないけれど 0.2 よりは小さい場合、と書いてあげると 15% の確率になる
+「おみくじ」動画＃確率を操作してみよう　にて
+ n が 0.05 より小さくはないけれど 0.2 よりは小さい場合、と書いてあげると 15% の確率になる
 
 // あたりを参考するもどうあてはめていいかわからず
 
@@ -415,7 +431,6 @@ const n = 15;
 // if (n < c) {
 // }
 // console.log(a);
-
 
 
 // {
@@ -428,6 +443,24 @@ const n = 15;
 //   btn.textContent = '中吉'; // 80%
 //   }
 // }
+他の人の回答ーーーー
+const n = 10000;
+  
+  // 1から6までの乱数を返す
+  function rand6() {
+    return Math.floor(Math.random()*6) + 1;
+  }
+  
+  let cnt = 0;  // 1の目を数えるカウンタ
+  for (let i=0; i<n; i++) {
+    if (rand6() === 1) {
+      cnt++;
+    }
+  }
+
+  console.log(`1が出る確率は${(cnt/n*100).toFixed(2)}%です。`);
+
+}
 問１７
 サイコロを作って１が出る確率をだそう
 const n = 10000;
