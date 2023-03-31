@@ -1016,3 +1016,26 @@ console.log(sentence);
 console.log(lesult);
 } 
 }}
+
+
+// * 市松模様を描画してみよう //*
+
+function setup() {
+  // 右の仕様を満たすように p5.js を使って実装してみましょう
+
+  createCanvas(640, 400);
+  background(0);
+
+  fill('green');
+
+  for (let i = 0; i < width / 80; i++) {
+    for (let j = 0; j < height / 80; j++) {
+      if (i % 2 === 0 && j % 2 === 0) {
+        rect(80 * (i + 1), 80 * j, 80);
+      } else if (i % 2 !== 0 && j % 2 !== 0) {
+        rect(80 * (i - 1), 80 * j, 80);
+      }
+    }
+  }
+}
+
