@@ -1039,3 +1039,53 @@ function setup() {
   }
 }
 
+// * 雰囲気が似た四角形を描画してみよう　クリックするたびの色相が変化するコード //*
+
+const WIDTH = 640;
+const HEIGHT = 400;
+const SQUARE_SIZE = 50;
+const SQUARE_COUNT = 5;
+const BACK_COLOR = 0;
+const SATURATION = 50;
+const LIGHTNESS = 50;
+const HUE_INTERVAL = 30;
+
+let hue = 0;
+
+function setup() {
+  // キャンバス作成
+  createCanvas(WIDTH, HEIGHT);
+  
+  // カラーモード
+  colorMode(HSL);
+  
+  // 背景
+  background(BACK_COLOR);
+  
+  // 枠無効
+  noStroke();
+  
+  // draw()関数をループさせない
+  noLoop();
+}
+
+function draw() {
+  // 原点をキャンバスの中心に移動
+  translate(width / 2, height / 2);
+  
+  // 四角形描画
+  for (let i = 0; i < SQUARE_COUNT; i++) {
+    fill((hue + HUE_INTERVAL * i) % 360 , SATURATION, LIGHTNESS);
+    square((i - SQUARE_COUNT / 2) * SQUARE_SIZE, -SQUARE_SIZE / 2, SQUARE_SIZE);
+  }
+}
+
+// マウスクリック時の処理
+function mouseClicked() {
+  hue = (hue + HUE_INTERVAL) % 360;
+  
+  // draw関数を一回実行
+  redraw();
+}
+
+
